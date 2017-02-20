@@ -4,7 +4,21 @@
 		<title>Sandwich Maker</title>
 	</head>
 	<body>
+<!-- 
+- a section of options for each sandwich part
+- the ability to select multiple, or zero, choices for each section (such as turkey 
+	and bacon, or "no meat")  -->
+	<!-- Condiment Choice -->
+	<!-- Veggie Choice -->
+	<!-- Cheese Choice-->
+	<!-- Meat Choice -->
+	<!-- Bread Choice  -->
+<!-- - an empty DOM element into which the final sandwich order and its cost will be inserted
+The ingredient choices should be stored as JS objects that contain the ingredients as keys and their cost as the value. {"turkey": 0.90, "bacon": 1.50} -->
+		<div id="mySandwich"></div>
 		<script type="text/javascript" src="/javascripts/SandwichMaker.js"></script>
+		<script type="text/javascript" src="/javascripts/Meat.js"></script>
+		<script type="text/javascript" src="/javascripts/DOMHandler.js"></script>
 	</body>
 </html>
 <!-- 
@@ -19,11 +33,6 @@ condiments
 veggies
 Your project should have one HTML file that has:
 
-- a section of options for each sandwich part
-- the ability to select multiple, or zero, choices for each section (such as turkey 
-	and bacon, or "no meat") 
-- an empty DOM element into which the final sandwich order and its cost will be inserted
-The ingredient choices should be stored as JS objects that contain the ingredients as keys and their cost as the value. {"turkey": 0.90, "bacon": 1.50}
 
 Make sure the ingredient objects cannot be accessed by the other modules except through an accessor (getter) method.
 
@@ -33,5 +42,4 @@ You should also create an additional JavaScript file that handles interacting wi
 
 Don't worry about exposing the prices to the user until you display the final cost. This is just an exercise, not a business model.
 
-Here's some simple boilerplate code to get you started.
  -->
