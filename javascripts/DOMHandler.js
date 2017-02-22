@@ -23,4 +23,3 @@ function makeMySandwich(meatChooser) {
 }
 
 console.log(SandwichMaker.addMeat());
-console.log(selectedTopping);

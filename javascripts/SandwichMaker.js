@@ -5,7 +5,7 @@ var SandwichMaker = (function() {
 
   // Return the public interface that other code can interact with
   return {
-    addTopping: function(toppingPrice) {
+    addTopping: function(meatPrices) {
       totalPrice += toppingPrice;
     }
   };
