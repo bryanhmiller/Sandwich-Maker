@@ -11,18 +11,17 @@ var ingredientHolderDiv = document.getElementById("ingredientHolder");
   A <select> element broadcasts a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
-
-console.log(SandwichMaker.addMeat());
+var importedMeatPrices = SandwichMaker.addMeat();
+var meatPlanet = "";
 function populateDiv() {
 	ingredientHolderDiv.innerHTML = "";
-	for ( i = 0 ; i < SandwichMaker.addMeat.length ; i++ ) {
-		var meatPlanet = "";
-		// meatPlanet += `<div class="meatBox" id="meat-chooser-${i}">`;
-		meatPlanet += `<div class="meatName">  ${SandwichMaker.addMeat[i].meat} </div>`;
-		// meatPlanet += `<div class="individualMeatPrice">  ${SandwichMaker.addMeat[i].price}"</div>`;
-		// meatPlanet += `</div>`
-		ingredientHolderDiv.innerHTML += meatPlanet;
+	for ( i = 0 ; i < importedMeatPrices.length ; i++ ) {
+		meatPlanet += `<div class="meatBox" id="meat-chooser-${i}">`;
+		meatPlanet += `<div class="meatName">  ${importedMeatPrices[i].meat} </div>`;
+		meatPlanet += `<div class="individualMeatPrice">  ${importedMeatPrices[i].price}</div>`;
+		meatPlanet += `</div>`;
 	}
+		ingredientHolderDiv.innerHTML += meatPlanet;
 }
  	
   // Get the value chosen from the DOM
@@ -34,6 +33,6 @@ function populateDiv() {
  
 //   // Add the topping to the SandwichMaker to increase the total price
 // }
-meatChooser.addEventListener("click", populateDiv);
-
+// meatChooser.addEventListener("click", populateDiv);
+populateDiv();
 
