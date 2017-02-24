@@ -27,7 +27,7 @@ body {
   text-decoration: none;
 }
 
-.meatBox selected {
+.selected {
   background: #3cb0fd;
   text-decoration: none;
 }
