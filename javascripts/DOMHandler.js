@@ -11,6 +11,7 @@ var ingredientHolderDiv = document.getElementById("ingredientHolder");
   A <select> element broadcasts a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
+console.log(SandwichMaker.addMeat("turkey"));
 var importedMeatPrices = SandwichMaker.addMeat();
 var meatPlanet = "";
 function populateDiv() {
