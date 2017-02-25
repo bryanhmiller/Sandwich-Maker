@@ -30,18 +30,22 @@ function populateDiv() {
 //   // Get the value chosen from the DOM
 //   selectedTopping = event.target.value;
 //   // Determine the price of the topping chosen
+var toppingPrice = 0;
+var sandwichPrice = document.getElementById("mySandwich").innerHTML = "<h1>Sandwich Price is $</h1>";
  function showMeTheMoney(event){
 	if(event.target.className === "meatName" || event.target.className === "individualMeatPrice") {
 // 2-22-17 Need to adjust the classes to follow the example in clicky-planets; ran out of time
 
-		console.log("event worked", event);
+		console.log("What is this? ", event.target.innerHTML);
 		console.log("unique ID", event.target.parentNode.id);
 		console.log("Text?", event.target.previousSibling);
 		event.target.parentNode.classList.add('selected');
+		toppingPrice = event.target.sandwichPrice;
+		sandwichPrice += toppingPrice;
 	
 	}
 }
-
+console.log("DOMHandler Sandwich Price $', totalPrice' not defined");
 //   // Add the topping to the SandwichMaker to increase the total price
 // }
 // meatChooser.addEventListener("click", populateDiv);

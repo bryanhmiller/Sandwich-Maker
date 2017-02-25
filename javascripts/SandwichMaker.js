@@ -5,11 +5,12 @@ var SandwichMaker = (function() {
 
   // Return the public interface that other code can interact with
   return {
-    addTopping: function(meatPrices) {
+    addTopping: function(toppingPrice) {
       totalPrice += toppingPrice;
+      console.log("Sandwich Price", totalPrice);
     }
   };
-})();
+})(SandwichMaker || {});
 
 
 
