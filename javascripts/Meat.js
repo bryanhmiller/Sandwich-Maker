@@ -9,7 +9,7 @@ var SandwichMaker = (function(maker) {
   // Augment the original object with another method
   maker.addMeat = function(selectedMeat) {
     return meatPrices[selectedMeat];
-  },
+  }
   // maker.removeMeat = function() {
   //   return -meatPrices[selectedMeat];
   // }

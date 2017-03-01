@@ -23,11 +23,12 @@ function meat(){
 	if (event.target.checked === true) {
 		toppingPrice = SandwichMaker.addMeat(selectedMeat);
 			console.log("toppingPrice", toppingPrice);
-	} else {
-		toppingPrice = toppingPrice * -1;
-	}	
 		totalPrice = SandwichMaker.addTopping(toppingPrice);
-			console.log("totalPrice", SandwichMaker.getTotalPrice());
+	} else if (event.target.checked === false) {
+		toppingPrice = SandwichMaker.addMeat(selectedMeat)* -1;
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	}	
+	console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
 veggieChooser.addEventListener("change", veggie);
