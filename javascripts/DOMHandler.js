@@ -5,6 +5,7 @@ var selectedTopping;
 // Get a reference to the <select> element that has all the meat options
 var meatChooser = document.getElementById("meat-chooser");
 var veggieChooser = document.getElementById("veggie-chooser");
+var breadChooser = document.getElementById("bread-chooser");
 var ingredientHolderDiv = document.getElementById("ingredientHolder");
 var toppingPrice = 0;
 var totalPrice = 0;
@@ -47,6 +48,21 @@ function veggie(){
 	console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
+breadChooser.addEventListener("change", bread);
+function bread(){
+	var selectedBread = event.target.value;
+		console.log("selectedBread",selectedBread);
+		console.log("Price", SandwichMaker.addBread(selectedBread));
+	if (event.target.checked === true) {
+		toppingPrice = SandwichMaker.addBread(selectedBread);
+			console.log("toppingPrice", toppingPrice);
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	} else if (event.target.checked === false) {
+		toppingPrice = SandwichMaker.addBread(selectedBread)* -1;
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	}	
+	console.log("totalPrice", SandwichMaker.getTotalPrice());
+} 
 
 
 
