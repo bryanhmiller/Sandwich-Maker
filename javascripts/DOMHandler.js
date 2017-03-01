@@ -30,8 +30,8 @@ veggieChooser.addEventListener("change", veggie);
 function veggie(){
 	var selectedVeggie = event.target.value;
 	console.log("selectedVeggie",selectedVeggie);
-	console.log("Price", SandwichMaker.addMeat(selectedMeat));
-	toppingPrice = SandwichMaker.addMeat(selectedMeat);
+	console.log("Price", SandwichMaker.addVeggie(selectedVeggie));
+	toppingPrice = SandwichMaker.addVeggie(selectedVeggie);
 	console.log("toppingPrice", toppingPrice);
 	totalPrice = SandwichMaker.addTopping(toppingPrice);
 	console.log("totalPrice", SandwichMaker.getTotalPrice());
