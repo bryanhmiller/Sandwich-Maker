@@ -18,12 +18,16 @@ var sandwichPrice = document.getElementById("mySandwich");
 meatChooser.addEventListener("change", meat);
 function meat(){
 	var selectedMeat = event.target.value;
-	console.log("selectedMeat",selectedMeat);
-	console.log("Price", SandwichMaker.addMeat(selectedMeat));
-	toppingPrice = SandwichMaker.addMeat(selectedMeat);
-	console.log("toppingPrice", toppingPrice);
-	totalPrice = SandwichMaker.addTopping(toppingPrice);
-	console.log("totalPrice", SandwichMaker.getTotalPrice());
+		console.log("selectedMeat",selectedMeat);
+		console.log("Price", SandwichMaker.addMeat(selectedMeat));
+	if (event.target.checked === true) {
+		toppingPrice = SandwichMaker.addMeat(selectedMeat);
+			console.log("toppingPrice", toppingPrice);
+	} else {
+		toppingPrice = toppingPrice * -1;
+	}	
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+			console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
 veggieChooser.addEventListener("change", veggie);
