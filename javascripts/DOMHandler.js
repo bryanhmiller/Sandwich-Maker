@@ -34,11 +34,16 @@ function meat(){
 veggieChooser.addEventListener("change", veggie);
 function veggie(){
 	var selectedVeggie = event.target.value;
-	console.log("selectedVeggie",selectedVeggie);
-	console.log("Price", SandwichMaker.addVeggie(selectedVeggie));
-	toppingPrice = SandwichMaker.addVeggie(selectedVeggie);
-	console.log("toppingPrice", toppingPrice);
-	totalPrice = SandwichMaker.addTopping(toppingPrice);
+		console.log("selectedVeggie",selectedVeggie);
+		console.log("Price", SandwichMaker.addVeggie(selectedVeggie));
+	if (event.target.checked === true) {
+		toppingPrice = SandwichMaker.addVeggie(selectedVeggie);
+			console.log("toppingPrice", toppingPrice);
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	} else if (event.target.checked === false) {
+		toppingPrice = SandwichMaker.addVeggie(selectedVeggie)* -1;
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	}	
 	console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
