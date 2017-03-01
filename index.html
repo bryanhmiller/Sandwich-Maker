@@ -15,14 +15,23 @@
 	<!-- Meat Choice -->
 		<!-- <button id="meat-chooser" class="btn">Show Me Meats</button> -->
 		<div id="ingredientHolder"></div>
-  		
-<!--	<input type="checkbox" id="meat-chooser" value="turkey">Turkey</input>
-		<input type="checkbox" id="meat-chooser" value="roastBeef">Roast Beef</input>
-		<input type="checkbox" id="meat-chooser" value="ham">Ham</input>
-		<input type="checkbox" id="meat-chooser" value="salami">Salami</input>
-		<input type="checkbox" id="meat-chooser" value="bacon">Bacon</input>
-		<input type="checkbox" id="meat-chooser" value="noMeat">No Meat</input>
- -->		
+	<fieldset id="meat-chooser">	
+		<input type="checkbox" value="turkey">Turkey</input>
+		<input type="checkbox" value="roastBeef">Roast Beef</input>
+		<input type="checkbox" value="ham">Ham</input>
+		<input type="checkbox" value="salami">Salami</input>
+		<input type="checkbox" value="bacon">Bacon</input>
+		<input type="checkbox" value="noMeat">No Meat</input>
+ 	</fieldset>	
+	<fieldset id="veggie-chooser">	
+		<input type="checkbox" value="romaine">Romaine</input>
+		<input type="checkbox" value="tomatoes">Tomatoes</input>
+		<input type="checkbox" value="cucumbers">Cucumbers</input>
+		<input type="checkbox" value="onions">Onions</input>
+		<input type="checkbox" value="peppers">Peppers</input>
+ 	</fieldset>	
+
+ 	<button id="make-sandwich">Make Sandwich</button>
 	<!-- Bread Choice  -->
 <!-- - an empty DOM element into which the final sandwich order and its cost will be inserted
 The ingredient choices should be stored as JS objects that contain the ingredients as keys and their cost as the value. {"turkey": 0.90, "bacon": 1.50} -->
