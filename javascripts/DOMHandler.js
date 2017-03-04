@@ -6,6 +6,7 @@ var selectedTopping;
 var meatChooser = document.getElementById("meat-chooser");
 var veggieChooser = document.getElementById("veggie-chooser");
 var breadChooser = document.getElementById("bread-chooser");
+var condimentChooser = document.getElementById("condiment-chooser");
 var ingredientHolderDiv = document.getElementById("ingredientHolder");
 var toppingPrice = 0;
 var totalPrice = 0;
@@ -64,6 +65,22 @@ function bread(){
 	console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
+condimentChooser.addEventListener("change", condiment);
+function condiment(){
+	var selectedCondiment = event.target.value;
+		console.log("selectedCondiment",selectedCondiment);
+		console.log("Price", SandwichMaker.addCondiment(selectedCondiment));
+	if (event.target.checked === true) {
+		console.log(selectedCondiment);
+		toppingPrice = SandwichMaker.addCondiment(selectedCondiment);
+			console.log("toppingPrice", toppingPrice);
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	} else if (event.target.checked === false) {
+		toppingPrice = SandwichMaker.addCondiment(selectedCondiment)* -1;
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	}	
+	console.log("totalPrice", SandwichMaker.getTotalPrice());
+} 
 
 
 
