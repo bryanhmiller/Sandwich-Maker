@@ -7,6 +7,7 @@ var meatChooser = document.getElementById("meat-chooser");
 var veggieChooser = document.getElementById("veggie-chooser");
 var breadChooser = document.getElementById("bread-chooser");
 var condimentChooser = document.getElementById("condiment-chooser");
+var cheeseChooser = document.getElementById("cheese-chooser");
 var ingredientHolderDiv = document.getElementById("ingredientHolder");
 var toppingPrice = 0;
 var totalPrice = 0;
@@ -82,9 +83,24 @@ function condiment(){
 	console.log("totalPrice", SandwichMaker.getTotalPrice());
 } 
 
+cheeseChooser.addEventListener("change", cheese);
+function cheese(){
+	var selectedCheese = event.target.value;
+		console.log("selectedCheese",selectedCheese);
+		console.log("Price", SandwichMaker.addCheese(selectedCheese));
+	if (event.target.checked === true) {
+		toppingPrice = SandwichMaker.addCheese(selectedCheese);
+			console.log("toppingPrice", toppingPrice);
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	} else if (event.target.checked === false) {
+		toppingPrice = SandwichMaker.addCheese(selectedCheese)* -1;
+		totalPrice = SandwichMaker.addTopping(toppingPrice);
+	}	
+	console.log("totalPrice", SandwichMaker.getTotalPrice());
+} 
 
 
-
+// Dynamic Code, was replaced, because information could be overwritten.
 // var importedMeatPrices = SandwichMaker.addMeat();
 // var meatPlanet = "";
 // function populateDiv() {
@@ -106,7 +122,7 @@ function condiment(){
 //   // Determine the price of the topping chosen
 function sandwichPricer() {
 	console.log("inside the sandwichPricer");
-	sandwichPrice.innerHTML = SandwichMaker.getTotalPrice(); 
+	sandwichPrice.innerHTML = "<h1>" + "Your Sandwich Price is $" + SandwichMaker.getTotalPrice(); + "</h1>" 
 }
 //  function showMeTheMoney(event){
 // 	if(event.target.className === "meatName" || event.target.className === "individualMeatPrice") {
